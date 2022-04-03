@@ -1,6 +1,13 @@
 from django.contrib import admin
 from .models import *
 
+@admin.register(Category)
+class AdminCategory(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('category_name', )}
+    list_display = ('id', 'category_name')
+    list_display_links = ('id', 'category_name')
 
-admin.site.register(Category)
-admin.site.register(Sight)
+
+@admin.register(Sight)
+class AdminSight(admin.ModelAdmin):
+    pass

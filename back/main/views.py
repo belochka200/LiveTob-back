@@ -3,11 +3,8 @@ from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from .models import PopularPeople
-from .models import InterestingFact
-
-from .serializers import PeopleSerializers
-from .serializers import FactsSerializers
+from .models import *
+from .serializers import *
 
 class getPopularPeoples(APIView):
     def get(self, request):
