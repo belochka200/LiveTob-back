@@ -24,7 +24,7 @@ class Sight(models.Model):
     schedule = models.CharField('График работы', max_length=255, blank=True)
     number = models.CharField('Номер телефона', max_length=255, blank=True)
     site = models.CharField('Сайт', max_length=255, blank=True)
-    image_preview = models.ImageField('Изображение')
+    image = models.ImageField('Изображение', upload_to="images/")
 
     def __str__(self):
         return self.title

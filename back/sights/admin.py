@@ -10,4 +10,6 @@ class AdminCategory(admin.ModelAdmin):
 
 @admin.register(Sight)
 class AdminSight(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {'slug': ('title', )}
+    list_display = ('id', 'title', 'category')
+    list_display_links = ('id', 'title')

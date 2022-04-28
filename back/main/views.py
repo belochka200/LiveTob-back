@@ -18,7 +18,8 @@ class getPopularPeoples(APIView):
 
 class getInterestingFacts(APIView):
     def get(self, request):
-        facts = InterestingFact.objects.all()
+        count = int(request.GET.get("count", 3))
+        facts = InterestingFact.objects.order_by("?")[:count]
         serializer_for_queryset = FactsSerializers(
             instance=facts,
             many=True
